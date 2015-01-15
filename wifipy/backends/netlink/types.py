@@ -1,6 +1,5 @@
-"""Port of types.h C library.
+"""Netlink Types (netlink-private/types.h).
 https://github.com/thom311/libnl/blob/master/include/netlink-private/types.h
-Ported by @Robpol86 <https://github.com/Robpol86>.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -50,7 +49,7 @@ class genl_family(Structure):
     """https://github.com/thom311/libnl/blob/master/include/netlink-private/types.h#L783"""
     _fields_ = NLHDR_COMMON + [
         ('gf_id', c_uint16),
-        ('gf_name[GENL_NAMSIZ]', c_char),
+        ('gf_name', c_char),
         ('gf_version', c_uint32),
         ('gf_hdrsize', c_uint32),
         ('gf_maxattr', c_uint32),
