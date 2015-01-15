@@ -1,5 +1,7 @@
-"""Port of Netlink Messages Interface (lib/msg.c) C library.
-http://www.infradead.org/~tgr/libnl/doc/api/msg_8c_source.html
+"""Netlink Messages Interface (lib/msg.c).
+https://github.com/thom311/libnl/blob/master/lib/msg.c
+
+Netlink message construction/parsing interface.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -18,9 +20,7 @@ PAGESIZE = getpagesize()
 
 def nlmsg_size(payload):
     """Calculates size of netlink message based on payload length.
-
-    Modeled after:
-    http://www.infradead.org/~tgr/libnl/doc/api/msg_8c_source.html#l00054
+    https://github.com/thom311/libnl/blob/master/lib/msg.c#L54
 
     Positional arguments:
     payload -- length of payload (integer).
@@ -29,28 +29,14 @@ def nlmsg_size(payload):
     Size of netlink message without padding (integer).
     """
     return int(NLMSG_HDRLEN + payload)
-
-
-def nlmsg_msg_size(payload):
-    """Calculates size of netlink message based on payload length.
-
-    Modeled after:
-    http://www.infradead.org/~tgr/libnl/doc/api/msg_8c_source.html#l00059
-
-    Positional arguments:
-    payload -- length of payload (integer).
-
-    Returns:
-    Size of netlink message without padding (integer).
-    """
-    return int(nlmsg_size(payload))
+nlmsg_msg_size = nlmsg_size
 
 
 def nlmsg_total_size(payload):
     """Calculates size of netlink message including padding based on payload length.
+    https://github.com/thom311/libnl/blob/master/lib/msg.c#L72
 
-    Modeled after:
-    http://www.infradead.org/~tgr/libnl/doc/api/msg_8c_source.html#l00072
+    This function is identical to nlmsg_size() + nlmsg_padlen().
 
     Positional arguments:
     payload -- length of payload (integer).
