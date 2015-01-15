@@ -1,11 +1,18 @@
-"""Port of Generic Netlink Controller (lib/genl/ctrl.c) C library.
-http://www.infradead.org/~tgr/libnl/doc/api/ctrl_8c_source.html
+"""Resolves Generic Netlink family names to numeric identifiers.
+Port of Generic Netlink Controller (lib/genl/ctrl.c) C library.
+https://github.com/thom311/libnl/blob/master/lib/genl/ctrl.c
+Ported by @Robpol86 <https://github.com/Robpol86>.
+
+The controller is a component in the kernel that resolves Generic Netlink family names to their numeric identifiers.
+This module provides functions to query the controller to access the resolving functionality.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
 License as published by the Free Software Foundation version 2.1
 of the License.
 """
+
+from wifipy.backends.netlink.types import genl_family
 
 
 def genl_ctrl_probe_by_name(sk, name):
@@ -18,7 +25,7 @@ def genl_ctrl_probe_by_name(sk, name):
     sk -- Generic Netlink socket.
     name -- family name.
     """
-    pass
+    ret = genl_family_alloc()
 
 
 def genl_ctrl_resolve(sk, name):

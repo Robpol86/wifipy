@@ -1,5 +1,6 @@
 """Port of types.h C library.
 https://github.com/thom311/libnl/blob/master/include/netlink-private/types.h
+Ported by @Robpol86 <https://github.com/Robpol86>.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -9,6 +10,7 @@ of the License.
 
 from ctypes import c_char, c_int, c_size_t, c_uint, c_uint16, c_uint32, POINTER, Structure
 
+from wifipy.backends.netlink.cache_api import nl_cache_ops
 from wifipy.backends.netlink.hashtable import nl_hash_table
 from wifipy.backends.netlink.list import nl_list_head
 from wifipy.backends.netlink.misc import ucred
