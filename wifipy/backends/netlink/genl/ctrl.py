@@ -26,13 +26,13 @@ def genl_ctrl_probe_by_name(sk, name):
     module autoload to take place to resolve the family request. Using an nl_cache prevents that operation.
 
     Positional arguments:
-    sk -- Generic Netlink socket.
+    sk -- generic netlink socket.
     name -- family name.
 
     Returns:
     Generic netlink family object or None if no match was found.
     """
-    ret = genl_family_alloc()
+    ret = genl_family_alloc()  # TODO
 
 
 def genl_ctrl_resolve(sk, name):
@@ -43,13 +43,13 @@ def genl_ctrl_resolve(sk, name):
     kernel directly, use genl_ctrl_search_by_name() if you need to resolve multiple names.
 
     Positional arguments:
-    sk -- Generic Netlink socket.
-    name -- name of Generic Netlink family.
+    sk -- generic netlink socket.
+    name -- name of generic netlink family.
 
     Returns:
     The numeric family identifier or a negative error code.
     """
-    pass
+    pass  # TODO
 
 
 def genl_ctrl_resolve_grp(sk, family_name, grp_name):
@@ -59,11 +59,11 @@ def genl_ctrl_resolve_grp(sk, family_name, grp_name):
     Looks up the family object and resolves the group name to the numeric group identifier.
 
     Positional arguments:
-    sk -- Generic Netlink socket.
-    family_name -- name of Generic Netlink family.
+    sk -- generic netlink socket.
+    family_name -- name of generic netlink family.
     grp_name -- name of group to resolve.
 
     Returns:
     Numeric group identifier or a negative error code.
     """
-    family = genl_family()
+    family = genl_family()  # TODO
