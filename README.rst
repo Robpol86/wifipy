@@ -31,7 +31,7 @@ reached.
    :alt: Downloads
 
 =============== ============== ================ ============= =============== ===========
-Windows Build   WiFi Build     Linux/OS X Build Code Coverage Latest          Downloads
+Windows         WiFi           Linux/OS X       Coverage      Latest          Downloads
 =============== ============== ================ ============= =============== ===========
 |buildAppveyor| |buildWercker| |buildTravis|    |coverage|    |latestVersion| |downloads|
 =============== ============== ================ ============= =============== ===========
