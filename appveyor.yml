@@ -1,6 +1,6 @@
 environment:
   CODECOV_TOKEN:
-    secure: REPLACE_ME
+    secure: CF9Br6WVfBFtfgjr/hAKD9+wBnNNt5WiuxN0gALpST436kzrlyw+t8y0weT0FffQ
 
 init:
   - set PATH=C:\Python34-x64;C:\Python34-x64\Scripts;%PATH%
