@@ -1,14 +1,17 @@
 language: python
 
-python:
-  - 3.4
+os:
+  - linux
+  - osx
 
 install:
-  - python -c 'import setup; print(setup.REQUIRES_PIP)' |xargs pip install
-  - pip install codecov
-  - pip install .
+  - pip install codecov tox
 
 script:
-  - python setup.py test
+  - tox
+  - (cd ./tests && ls .coverage.py34 .coverage.py33 .coverage.pypy3 .coverage.pypy .coverage.py27 .coverage.py26)
 
-after_success: codecov
+after_success:
+  - mv tests/.coverage* .
+  - coverage combine
+  - codecov
